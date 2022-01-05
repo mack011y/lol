@@ -56,7 +56,7 @@ class Screen():
                 else:
                     pygame.draw.rect(sc, pygame.Color('black'), (i * 7, j * 7, 7, 7))
         pygame.display.flip()
-        clock = pygame.time.Clock().tick(30)
+        pygame.time.Clock().tick(15)
 
 def main():
     screen = Screen(100)
