@@ -1,7 +1,7 @@
 import pygame
 
-Size = 700
-sc = pygame.display.set_mode([Size, Size])
+size = 700
+sc = pygame.display.set_mode([size, size])
 
 class Cell():
     life: int
@@ -56,7 +56,7 @@ class Screen():
                 else:
                     pygame.draw.rect(sc, pygame.Color('black'), (i * 7, j * 7, 7, 7))
         pygame.display.flip()
-        pygame.time.wait(200)
+        clock = pygame.time.Clock().tick(30)
 
 def main():
     screen = Screen(100)
