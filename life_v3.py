@@ -12,7 +12,7 @@ class Cell():
     def get_life(self):
         return self.life
 
-    def chenge(self, life):
+    def change(self, life):
         self.life = life
 
 class Screen():
@@ -23,7 +23,7 @@ class Screen():
         self.cells = [[Cell(0) for i in range(size)] for j in range(size)]
 
     def change(self, i, j, is_life):
-        self.cells[i][j].chenge(is_life)
+        self.cells[i][j].change(is_life)
 
     def iteration(self):
         v_change_position = [[0, 1], [1, 0], [-1, 0], [0, -1], [1, 1], [1, -1], [-1, 1], [-1, -1]]
@@ -41,9 +41,9 @@ class Screen():
                             count += 1
                 if (self.cells[i][j].get_life()):
                     if count == 2 or count == 3:
-                        temporary_cells[i][j].chenge(1)
+                        temporary_cells[i][j].change(1)
                 elif (count == 3):
-                    temporary_cells[i][j].chenge(1)
+                    temporary_cells[i][j].change(1)
         temporary_cells, self.cells = self.cells, temporary_cells
 
     def print(self):
@@ -73,4 +73,5 @@ def main():
             if event.type == pygame.QUIT:
                 exit()
 
-main()
+if __name__ == '__main__':
+    main()
